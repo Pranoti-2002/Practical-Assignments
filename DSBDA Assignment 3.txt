@@ -1,0 +1,33 @@
+import pandas as pd 
+import pandas as pd
+
+df = pd.read_csv(r'C:\csv file\Salary_data.csv') 
+
+print(df) 
+
+#mean of salary column
+
+print("Mean of the salary column is" ,df['Salary'].mean())
+
+#median of salary column
+
+print("Median of salary column is" ,df['Salary'].median()) 
+
+print("Maximum value in Salary is" ,df['Salary'].max())  
+
+#minimum value present in salary column
+
+print("Minimum value in Salary is" ,df['Salary'].min()) 
+
+#maximum value in dataset
+
+print("Standard deviation of Salary column is" ,df['Salary'].std()) 
+
+#percentile
+
+print("percentile value in Salary is" ,df['Salary'].quantile(0.5))  
+
+#groupby the salary column
+
+gk = df.groupby('Salary') 
+print(gk.first()) 
