@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "employees.dtd">
+<DOCTYPE employees SYSTEM "XML_DATA.dtd"> 
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<employees>
+  <employee department="ENG">
+    <name id="1">Upendra Roul</title>
+    <position>Software Developer</author>
+    <joinyear>2010</joinyear>
+    <salary>6000</price>
+  </employee>
+  <employee category="ENG">
+    <name id="1">Jay Prakash</title>
+    <position>Testers</author>
+    <joinyear>2010</joinyear>
+    <salary>7000</price>
+  </employee>
+  <employee category="HR">
+    <name id="1">Rekha Sharma</title>
+    <position>HR</author>
+    <joinyear>2005</joinyear>
+    <salary>7000</price>
+  </employee>
+  <employee category="HK">
+    <name id="1">Rohit S</title>
+    <position>House Keeping</author>
+    <joinyear>2000</joinyear>
+    <salary>3000</price>
+  </employee>
+</employees>

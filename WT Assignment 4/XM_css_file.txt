@@ -1,0 +1,44 @@
+employees {
+    color: purple;
+    background-color : burlywood;
+    width: 100%;
+    display:table;
+}
+employee {
+    display:table; 
+    border: 1px solid silver;
+    margin: 0.7em; 
+    padding:0.7em; 
+    background-color:whitesmoke;
+    }
+
+ name,Position,joinyear, salary {
+    display : table;
+    text-align: center;
+}
+name {
+    color:rgb(89, 93, 89); 
+    text-decoration: underline;
+    font-size : 30px;
+    font-weight : bold;
+
+}
+Position {
+    color:palevioletred; 
+    font-size : 20px;
+    font-weight :bolder ;
+}
+
+joinyear {
+    color:palevioletred; 
+    font-size : 20px;
+    font-weight :bolder ;
+}
+
+salary {
+    color:palevioletred; 
+    font-size : 20px;
+    font-weight :bolder ;
+}
+
+
