@@ -1,0 +1,44 @@
+import pandas as pd  
+
+#creating the dataframe
+
+data = [['Prachi' ,90] , ['Sakshi' , 78] , ['Gauri' , 89] , ['Priya' , 67]] 
+
+df = pd.DtaFrame(data , columns=['name' , 'marks']) 
+
+print(df) 
+
+
+
+#finding mean 
+
+print(df['marks'].mean())   
+
+
+#uploading csv file for performing operations 
+
+
+import pandas as pd 
+
+df = pd.read_csv(r'C:\DSBDA\employees.csv') 
+
+print(df) 
+
+
+print(df['Salary'].mean())  
+
+
+missing_data = pd.isnull(df['Team']) 
+print(df[null_data]) 
+
+#printing the data type of each column in data set 
+
+print(df.dtypes) 
+
+
+#describe function
+
+print(df.describe()) 
+
+
+
