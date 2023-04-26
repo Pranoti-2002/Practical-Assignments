@@ -1,61 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-
-    <meta charset="utf-8">
-
-<title>Simple Calculator using HTML, CSS and JavaScript</title>
-
-<link rel="stylesheet" href="styles.css">
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>JavaScript Form Validation using a sample registration form</title>
+<meta name="keywords" content="example, JavaScript Form Validation, Sample registration form" />
+<meta name="description" content="This document is an example of JavaScript Form Validation using a sample registration form. " />
+<link rel='stylesheet' href='style.css' type='text/css' />
+<script src="script.js"></script>
 </head>
-
-<body>
-
-<table class="calculator" >
-
-    <tr>
-
-    <td colspan="3"> <input class="display-box" type="text" id="result" disabled /> </td>
-
-<!-- clearScreen() function clears all the values -->
-
-<td> <input type="button" value="C" onclick="clearScreen()" id="btn" /> </td>
-
-</tr>
-
-<tr>
-
-    <!-- display() function displays the value of clicked button -->
-
-<td> <input type="button" value="1" onclick="display('1')" /> </td>
-
-<td> <input type="button" value="2" onclick="display('2')" /> </td>
-
-<td> <input type="button" value="3" onclick="display('3')" /> </td>
-<td> <input type="button" value="/" onclick="display('/')" /> </td>
-</tr>
-<tr>
-    <td> <input type="button" value="4" onclick="display('4')" /> </td>
-    <td> <input type="button" value="5" onclick="display('5')" /> </td>
-    <td> <input type="button" value="6" onclick="display('6')" /> </td>
-    <td> <input type="button" value="-" onclick="display('-')" /> </td>
-</tr>
-    <tr>
-    <td> <input type="button" value="7" onclick="display('7')" /> </td>
-    <td> <input type="button" value="8" onclick="display('8')" /> </td>
-    <td> <input type="button" value="9" onclick="display('9')" /> </td>
-    <td> <input type="button" value="+" onclick="display('+')" /> </td>
-</tr>
-    <tr>
-    <td> <input type="button" value="." onclick="display('.')" /> </td>
-    <td> <input type="button" value="0" onclick="display('0')" /> </td>
-
-    <!-- calculate() function evaluates the mathematical expression -->
-    <td> <input type="button" value="=" onclick="calculate()" id="btn" /> </td>
-    <td> <input type="button" value="*" onclick="display('*')" /> </td>
-</tr>
-</table>
-<script type="text/javascript" src="script.js"></script>
+<body onload="document.registration.userid.focus();">
+<h1>Registration Form</h1>
+<form name='registration' onSubmit="return formValidation();">
+<ul>
+    <li><label for="username">Name:</label></li>
+    <li><input type="text" name="username" size="50" /></li>
+    <li><label for="passid">Password:</label></li>
+    <li><input type="password" name="passid" size="12" /></li>
+    <li><label for="address">Address:</label></li>
+    <li><input type="text" name="address" size="50" /></li>
+    <li><label for="country">Country:</label></li>
+    <li><select name="country">
+      <option selected="" value="Default">(Please select a country)</option>
+      <option value="AF">India</option>
+      <option value="AL">Canada</option>
+      <option value="DZ">India</option>
+      <option value="AS">Russia</option>
+      <option value="AD">USA</option>
+       </select></li>
+    <li><label for="zip">ZIP Code:</label></li>
+    <li><input type="text" name="zip" /></li>
+    <li><label for="email">Email:</label></li>
+    <li><input type="text" name="email" size="50" /></li>
+    <li><label>Language:</label></li>
+    <li><input type="checkbox" name="en" value="en" checked /><span>English</span></li>
+    <li><input type="checkbox" name="nonen" value="noen" /><span>Non English</span></li>
+    <li><label for="desc">About:</label></li>
+    <li><textarea name="desc" id="desc"></textarea></li>
+    <li><input type="submit" name="submit" value="Submit" /></li>
+</ul>
+</form>
 </body>
 </html>
