@@ -1,0 +1,13 @@
+public class arrayofstring {
+    public static List<Integer> generatestring(Integer n) 
+    { 
+        List<Integer> myArray = new List<Integer>();
+        for(Integer i=1; i<n; i++) 
+        { 
+            myArray.add( i*i);  
+            System.debug(myArray[i]);
+        } 
+        
+        return myArray;
+    }
+} 
