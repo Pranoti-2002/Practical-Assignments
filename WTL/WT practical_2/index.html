@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<title>Registration form</title>
+<link href="style.css" rel="stylesheet"></link></head>
+ <script src="script.js"></script> 
+<body onload="document.registration.userid.focus();">
+<div class="con">
+<form name='registration' onSubmit="return formValidation();">  
+   <div class="con2">
+    <img src="logo.png" width=400px height=150px> 
+   </div>
+   <div class="main">
+    <table align="center"><br><br>
+        <tr><br><br><br><br>
+          <td><b><br>Register For Infosys Springboard Courses<br><br></td></tr>
+    </table>
+    <div class="con1">
+      <table align="center"> 
+       <tr>
+        <td>Username:</td>
+        <td><input type="text" value="" id="user" name="userid" required></td>
+       </tr>
+       <tr>
+        <td>Password: </td>
+        <td><input type="text" value="" name="pass"></td>
+       </tr>
+      <tr> 
+       <td>Confirm Password:</td>
+       <td><input type="text" value="" name="cpass"></textarea></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><input type="text" value="" name="vemail"></td>
+      </tr>
+      <tr>
+       <td>Mobile no.:</td>
+       <td><input type="text" value="" name="numb"></td> 
+       </tr>
+       <tr></tr><tr></tr>
+      </table>
+      <table align="center">
+       <tr>
+         <td><button type="button" onclick="myFunction()">Submit</button></td><td><input type="reset" value="CANCEL"></td> 
+       </tr>
+      </table>
+    </div>
+  </div>
+</form>
+</div>
+</body>
+</html>

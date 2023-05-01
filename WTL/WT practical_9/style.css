@@ -1,0 +1,12 @@
+.result {
+    color: #38F;
+    font-size: 36px;
+  }
+  
+  .command {
+      cursor: pointer;
+      color: #00B;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  

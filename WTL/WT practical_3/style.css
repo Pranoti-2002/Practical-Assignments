@@ -1,0 +1,32 @@
+employees {
+	color: black;
+	background-color : gray;
+	width: 100%;
+    display:block;
+    text-align:center; 
+}
+employee {
+    display:block; 
+    border: 1px solid silver;
+    margin:0.5em; 
+    padding:0.5em; 
+    background-color:whitesmoke;
+    }
+heading {
+	color: rgb(167, 26, 122);
+	font-size : 40px;
+	background-color : powderblue;
+    display:block;
+    font-weight:bolder;
+    text-align:center;
+}
+heading, name, position, joinyear, salary {
+	display : block;
+}
+name {
+    color:rgb(89, 93, 89); 
+    text-decoration: underline;
+	font-size : 20px;
+	font-weight : bold;
+
+}
