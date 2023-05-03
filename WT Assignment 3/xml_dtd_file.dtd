@@ -1,7 +1,0 @@
-<!ELEMENT employees[
-<!ELEMENT employee> (name,position,joinyear,salary)>
-<!ELEMENT name (#PCDATA)>
-<!ELEMENT position (#PCDATA)>
-<!ELEMENT joinyear (#PCDATA)>
-<!ELEMENT salary (#PCDATA)>
-]> 
