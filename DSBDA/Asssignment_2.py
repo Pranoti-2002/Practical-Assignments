@@ -37,6 +37,9 @@ print(df['Team'].isnull())
 print(df['Team'].isnull().sum()) 
 
 mean_value=df['Salary'].mean()
+#data transformation
+dummies=pd.get_dummies(df.Team) 
+print(dummies.head()) 
 
 
 
