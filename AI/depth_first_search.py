@@ -1,37 +1,30 @@
-# Python3 program to for tree traversals
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
-# A class that represents an individual node in a
-# Binary Tree
+def dfs(node):
+    if not node:
+        return
 
+    # Process node (print value, perform some operation, etc.)
+    print(node.val)
 
-class Node:
-	def __init__(self, key):
-		self.left = None
-		self.right = None
-		self.val = key
+    dfs(node.left)
+    dfs(node.right) 
 
+# Example usage
+# Create a binary tree
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
+root.right.left = TreeNode(6)
+root.right.right = TreeNode(7)
 
-# A function to do inorder tree traversal
-def printInorder(root):
+# Perform DFS on the tree
+dfs(root)
 
-	if root: 
-
-		# First recur on left child
-		printInorder(root.left)
-
-		# then print the data of node
-		print(root.val),
-
-		# now recur on right child
-		printInorder(root.right)
-
-
-# Driver code
-root = Node(1)
-root.left = Node(2)
-root.right = Node(3)
-root.left.left = Node(4)
-root.left.right = Node(5)
-
-print ("Inorder traversal of binary tree is")   
-printInorder(root)
+#output-1 2 4 5 3 6 7
