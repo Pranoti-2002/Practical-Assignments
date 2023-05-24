@@ -1,64 +1,42 @@
-class Node:
- 
-    # A utility function to create a new node
-    def __init__(self, key):
-        self.data = key
-        self.left = None
-        self.right = None
- 
- 
-# Function to  print level order traversal of tree
-def printLevelOrder(root):
-    h = height(root)
-    for i in range(1, h+1):
-        printCurrentLevel(root, i)
- 
- 
-# Print nodes at a current level
-def printCurrentLevel(root, level):
-    if root is None:
-        return
-    if level == 1:
-        print(root.data, end=" ")
-    elif level > 1:
-        printCurrentLevel(root.left, level-1)
-        printCurrentLevel(root.right, level-1)
- 
-def height(node):
-    if node is None:
-        return 0
-    else:
-        # Compute the height of each subtree
-        lheight = height(node.left)
-        rheight = height(node.right)
- 
-        # Use the larger one
-        if lheight > rheight:
-            return lheight+1
-        else:
-            return rheight+1
- 
- 
-# Driver program to test above function
-root = Node(1)
-root.left = Node(2)
-root.right = Node(3)
-root.left.left = Node(4)
-root.left.right = Node(5)
- 
-print("Level order traversal of binary tree is -")
-printLevelOrder(root) 
+from collections import deque 
 
+class TreeNode:
+    def __init__(self , val=0 , left=None , right=None):
+        self.val=val
+        self.right=right
+        self.left=left
 
+def bfs(root):
+    if not root:
+        return [] 
+    
+    result=[] 
+    queue=deque() 
+    queue.append(root) 
 
+    while queue:
+        level_size=len(queue) 
+        level_values=[] 
+        for _ in range(level_size):
+            node=queue.popleft() 
+            level_values.append(node.val) 
 
+            if node.left:
+                queue.append(node.left) 
+            if node.right:
+                queue.append(node.right) 
+        result.append(level_values)  
+    return result 
 
+root=TreeNode(1) 
+root.left=TreeNode(2)
+root.right=TreeNode(3)
+root.left.left=TreeNode(5) 
+root.left.right=TreeNode(7)
+root.right.left=TreeNode(6) 
 
+bfs_result=bfs(root)  
+print(bfs_result) 
 
-
-
-""" Compute the height of a tree--the number of nodes
-    along the longest path from the root node down to
-    the farthest leaf node
-"""
+#output-[[1], [2, 3], [5, 7, 6]]
  
