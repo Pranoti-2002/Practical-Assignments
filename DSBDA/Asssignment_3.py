@@ -1,18 +1,17 @@
-import pandas as pd  
-df = pd.read_csv(r'C:\DSBDA\HousingData.csv') 
+import pandas as pd 
+import seaborn as sns
+df=sns.load_dataset('iris')  
+df.head() 
 
-print("percentile value in Salary is" ,df['Salary'].quantile(0.5)) 
-gk = df.groupby('Salary') 
-print(gk.first()) 
+summary_stats = df.groupby('species')['sepal_length'].describe() 
+summary_stats 
 
-print(df) 
+iris_set = (df['species']== 'setosa') 
+df[iris_set].describe() 
 
-print("Mean of the salary column is" ,df['Salary'].mean())
+iris_set = (df['species']== 'versicolor')  
+df[iris_set].describe() 
 
-print("Median of salary column is" ,df['Salary'].median()) 
+iris_set = (df['species']== 'virginica')  
+df[iris_set].describe() 
 
-print("Maximum value in Salary is" ,df['Salary'].max())  
-
-print("Minimum value in Salary is" ,df['Salary'].min()) 
-
-print("Standard deviation of Salary column is" ,df['Salary'].std()) 
