@@ -1,45 +1,44 @@
 import pandas as pd 
-import numpy as np
-import seaborn as sns 
-import matplotlib.pyplot as plt
-#detecting the outliers 
-df = pd.read_csv(r'C:\DSBDA\employees.csv') 
-fig, ax = plt.subplots(figsize = (18,10))
-ax.scatter(df['Salary'], df['Bonus %']) 
- 
-# x-axis label
-ax.set_xlabel('Salary')
- 
-# y-axis label
-ax.set_ylabel('Bonus') 
-plt.show()
+import numpy as np 
 
-# printing outliers 
-df = pd.read_csv(r'C:\DSBDA\employees.csv') 
-print(np.where((df['Salary']>100000) & (df['Bonus %']>11)))
+df=pd.read_csv(r'C:\CSV_file\Academic-Performance-Dataset.csv') 
+df.head()   
 
-fig, ax = plt.subplots(figsize = (18,10))
-ax.scatter(df['Salary'], df['Bonus %']) 
- 
-# x-axis label
-ax.set_xlabel('Salary')
- 
-# y-axis label
-ax.set_ylabel('Bonus')
-plt.show()
+df['EM1_marks'].isnull().sum()  
 
-df['Team'].fillna(value='Engineer', inplace=True)
+df['math score'].describe()  
 
-print(df['Team'])  
+#replacing null values with mean of that column
 
-print(df['Team'].isnull()) 
+mean_value=df['Total Marks'].mean()  
+df['Total Marks'].fillna(mean_value , inplace=False)  
+df['Total Marks'].head()   
 
-print(df['Team'].isnull().sum()) 
+#detecting outliers
 
-mean_value=df['Salary'].mean()
-#data transformation
-dummies=pd.get_dummies(df.Team) 
-print(dummies.head()) 
+def detect_outliers_iqr(column):
+    # Calculate the first quartile (Q1) and third quartile (Q3)
+    q1 = column.quantile(0.25)
+    q3 = column.quantile(0.75)
 
+    # Calculate the IQR (Interquartile Range)
+    iqr = q3 - q1
 
+    # Define the lower and upper bounds for outliers
+    lower_bound = q1 - 1.5 * iqr
+    upper_bound = q3 + 1.5 * iqr
 
+    # Find the outliers
+    outliers = column[(column < lower_bound) | (column > upper_bound)] 
+    print(iqr) 
+    print(lower_bound) 
+    print(upper_bound)  
+    return outliers
+
+outliers = detect_outliers_iqr(df['Total Marks'])  
+print("Outliers:", outliers)
+
+# data transformation
+
+transformed_data=np.log(df['Total Marks']) 
+transformed_data
