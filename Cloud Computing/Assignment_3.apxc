@@ -1,13 +1,13 @@
-public class arrayofstring {
-    public static List<Integer> generatestring(Integer n) 
-    { 
-        List<Integer> myArray = new List<Integer>();
-        for(Integer i=1; i<n; i++) 
-        { 
-            myArray.add( i*i);  
-            System.debug(myArray[i]);
-        } 
-        
-        return myArray;
+public class bank {
+    public static void deposite(Integer d){ 
+        Integer b=10000;
+        Integer r=b+d;
+        System.debug('Account balance after deposite is:' +r); 
+    } 
+    
+    public static void withdraw(Integer w){ 
+        Integer b=10000; 
+        Integer r=b-w;
+        System.debug('Account balance after withdraw is:' +r); 
     }
-} 
+}
