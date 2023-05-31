@@ -1,5 +1,5 @@
 def aStarAlgo(start_node, stop_node):
-    open_set = set(start_node)
+     open_set = set(start_node) # define the start node 
     closed_set = set()
     g = {}               #store distance from starting node
     parents = {}         # parents contains an adjacency map of all nodes
