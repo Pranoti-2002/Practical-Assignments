@@ -1,7 +1,6 @@
 import pandas as pd  
 import numpy as np
 from sklearn import preprocessing
-
 df = pd.read_csv(r'C:\DSBDA\employees.csv') 
 print(df) 
 print(df.dtypes)
